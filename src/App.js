@@ -11,7 +11,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Trains />} />
         <Route path="/train/:trainId" element={<TrainInfos />} />
-        <Route>No Train Game</Route>
       </Routes>
     </div>
   );
