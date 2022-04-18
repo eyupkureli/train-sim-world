@@ -6,7 +6,7 @@ import { selectedTrain } from "../redux/actions/trainActions.js";
 
 const TrainInfos = () => {
   const train = useSelector((state) => state.train);
-  const { id, title, subscriberCount, shortDescription } = train;
+  const { id, title, subscriberCount, shortDescription, category } = train;
   const { trainId } = useParams();
   const dispatch = useDispatch();
   console.log(train);
@@ -30,7 +30,8 @@ const TrainInfos = () => {
         <div className="card" key={id}>
           <div className="container">
             <h1>{title}</h1>
-            <h3>Subscriber Count: {subscriberCount}</h3>
+            <p>Category: {category}</p>
+            <p>Subscriber Count: {subscriberCount}</p>
             <p>{shortDescription}</p>
           </div>
         </div>
