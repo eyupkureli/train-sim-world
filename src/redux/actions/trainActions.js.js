@@ -14,3 +14,8 @@ export const selectedTrain = (train) => {
    };
 };
 
+export const removeSelectedTrain = () => {
+   return {
+      type: ActionTypes.REMOVE_SELECTED_TRAIN,
+   };
+};

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { selectedTrain } from "../redux/actions/trainActions.js";
+import { selectedTrain, removeSelectedTrain } from "../redux/actions/trainActions.js";
 
 const TrainInfos = () => {
   const train = useSelector((state) => state.train);
@@ -20,6 +20,9 @@ const TrainInfos = () => {
   };
   useEffect(() => {
     if (trainId && trainId !== "") getTrainInfo();
+    return () => {
+      dispatch(removeSelectedTrain());
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trainId]);
   return (
